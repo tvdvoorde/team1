@@ -1,4 +1,4 @@
-on: [push]
+on: workflow_dispatch
 
 jobs:
   hello_world_job:
@@ -6,10 +6,20 @@ jobs:
     name: test job
     steps:
       - uses: actions/checkout@v3
-      - id: foo
-        uses: tvdvoorde/action1@main
+#      - id: foo
+#        uses: tvdvoorde/action1@main
+#        with:
+#          input1: 'This is input 1'
+#      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+#        shell: bash
+      - name: Trigger Workflow
+        uses: actions/github-script@v6
         with:
-          input1: 'This is input 1'
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
-
+          github-token: ${{ secrets.PAT }}
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: 'tvdvoorde',
+              repo: 'action1',
+              workflow_id: 'subaction.yaml',
+              ref: 'main',
+            })
