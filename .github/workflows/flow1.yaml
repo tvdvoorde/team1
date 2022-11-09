@@ -12,13 +12,4 @@ jobs:
           input1: 'This is input 1'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
-      - name: Trigger Workflow
-        uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: "tvdvoorde",
-              repo: "action1",
-              workflow_id: 'subaction.yaml',
-              ref: 'main',
-            })
+
