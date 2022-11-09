@@ -22,4 +22,9 @@ jobs:
               repo: 'action1',
               workflow_id: 'subaction.yaml',
               ref: 'main',
+              inputs: {
+                inputkey1: 'inputvalue1' }}
+              },              
             })
+
+
