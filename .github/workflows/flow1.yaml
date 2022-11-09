@@ -24,7 +24,7 @@ jobs:
               workflow_id: 'subaction.yaml',
               ref: 'main',
               inputs: {
-                inputkey1: 'inputvalue1' }}
+                inputkey1: 'inputvalue1' 
               },              
             })
 
