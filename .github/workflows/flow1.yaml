@@ -15,21 +15,8 @@ jobs:
       - uses: tvdvoorde/action1@main
         with:
           input1: ${{ secrets.PAT }}
-#     - run: echo random-number ${{ steps.foo.outputs.random-number }}
+#      - run: echo random-number ${{ steps.foo.outputs.random-number }}
 #        shell: bash
-      - name: Trigger Workflow
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.PAT }}
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: 'tvdvoorde',
-              repo: 'action1',
-              workflow_id: 'subaction.yaml',
-              ref: 'main',
-              inputs: {
-                inputkey1: 'inputvalue1' 
-              },              
-            })
+
 
 
