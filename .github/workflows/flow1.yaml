@@ -15,8 +15,7 @@ jobs:
       - uses: tvdvoorde/action1@main
         with:
           input1: ${{ secrets.PAT }}
-#      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-#        shell: bash
+
 
 
 
