@@ -1,6 +1,10 @@
 name: team1flow
 on: workflow_dispatch
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
