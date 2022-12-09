@@ -1,0 +1,14 @@
+name: callaction
+on: workflow_dispatch
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: test job
+    steps:
+      - uses: actions/checkout@v3
+      - uses: tvdvoorde/action1/testaction@main
